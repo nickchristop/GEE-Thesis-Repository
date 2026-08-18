@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you reference this work, please cite it as below."
+title: "Geospatial Data Analysis Using Google Earth Engine for the Detection of Urban Development in Attica"
+type: thesis
+authors:
+  - family-names: "Christopoulos"
+    given-names: "Nikolaos"
+thesis-type: "BSc Dissertation"
+institution:
+  name: "University of East London, School of Architecture, Computing and Engineering"
+date-released: 2026-05-31
+year: 2026
+url: "https://github.com/nickchristop/GEE---My-Undergraduate-Thesis-Dissertation"
+repository-code: "https://github.com/nickchristop/GEE---My-Undergraduate-Thesis-Dissertation"
+keywords:
+  - "Google Earth Engine"
+  - "remote sensing"
+  - "urban change detection"
+  - "Sentinel-2"
+  - "Sentinel-1"
+  - "SAR"
+  - "Dynamic World"
+  - "GHSL"
+  - "Attica"
+  - "Greece"
+license: MIT
