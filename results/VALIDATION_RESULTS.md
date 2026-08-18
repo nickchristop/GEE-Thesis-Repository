@@ -26,17 +26,19 @@ The **Expanded candidate** layer, scored against the same Dynamic World referenc
 
 ## 2. Secondary AOIs (Balanced profile) — testing beyond the primary hotspot
 
-Two further AOIs were tested at the Balanced profile to check the detector's behaviour away from the main redevelopment hotspot, consistent with the dissertation's use of a secondary growth-corridor site (Spata/Mesogeia area) and a stability-control site with minimal expected change.
+Two further, purpose-selected AOIs were tested at the Balanced profile to check the detector's behaviour away from the main redevelopment hotspot: a genuine secondary growth site near **Spata**, and a **stability-control site on Mount Hymettus**, chosen specifically because no real development was expected there.
 
-| AOI | Reference positive px | Reference area | CORE built-up | Expanded candidate | OA | Kappa | Precision | Recall | F1 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Primary (Ellinikon) | 11,167 | 0.8800 km² | 3.3249 km² | 5.0320 km² | 57.5% | 0.150 | 88.1% | 17.3% | 0.290 |
-| Secondary growth-corridor AOI | 4,347 | 0.3423 km² | 0.9312 km² | 1.1788 km² | 53.7% | 0.073 | 61.5% | 19.7% | 0.298 |
-| Stability-control AOI | 83 | 0.0066 km² | 0.0010 km² | 0.3548 km² | 78.1% (CORE) | -0.005 (CORE) | 0.0% (CORE) | 0.0% (CORE) | N/A (CORE) |
+| AOI | Reference positive px | Reference area | CORE built-up | Expanded candidate | OA | Kappa | Precision | Recall | F1 | TP | TN | FP | FN |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Primary — Ellinikon | 11,167 | 0.8800 km² | 3.3249 km² | 5.0320 km² | 57.5% | 0.150 | 88.1% | 17.3% | 0.290 | 52 | 293 | 7 | 248 |
+| Spata (near Athens International Airport) | 4,347 | 0.3423 km² | 0.9312 km² | 1.1788 km² | 53.7% | 0.073 | 61.5% | 19.7% | 0.298 | 59 | 263 | 37 | 241 |
+| Hymettus control (Kaisariani Aesthetic Forest) | 83 | 0.0066 km² | 0.0010 km² | 0.3548 km² | 78.1% | -0.005 | 0.0% | 0.0% | N/A | 0 | 299 | 1 | 83 |
 
-**Secondary growth-corridor AOI:** precision drops to 61.5% relative to the primary site (88.1%) while recall stays comparable (19.7% vs 17.3%). This is a genuinely useful negative result: it shows the detector's precision is not uniform across Attica and is somewhat site-dependent — plausibly because this corridor mixes lower-density, more heterogeneous suburban/logistics-type development with the kind of dry, spectrally ambiguous ground the dissertation identifies as Attica's core confusion risk.
+*(TP/TN/FP/FN are raw stratified-sample point counts out of the ~300+300 balanced sample per AOI; the Hymettus sample is smaller — 83 positive + 300 negative — because so few positive reference points existed to draw from.)*
 
-**Stability-control AOI:** the reference dataset shows almost no real development here (83 positive pixels out of ~54,400 sampled), and the detector correctly found almost nothing in CORE (recall/precision both effectively 0%, on a very small, low-power sample) — the conservative, high-specificity behaviour a control site is meant to demonstrate. The broader Expanded candidate layer did register signal here (recall 72.3%, precision 69.8%, F1 0.710), which reads as construction-stage activity present in the AOI that Dynamic World's "built" label hadn't caught up to yet, rather than a detector false-alarm — consistent with the CORE/Expanded design intent.
+**Spata:** an industrial/logistics growth corridor around Athens International Airport (new warehouses and industrial buildings on former agricultural land). Precision drops to 61.5% relative to the primary site (88.1%) while recall stays comparable (19.7% vs 17.3%). This is a genuinely useful negative result, not a hidden one: it shows the detector's precision is not uniform across Attica and is somewhat site-dependent — this corridor mixes lower-density, more heterogeneous industrial/agricultural-edge development with the kind of dry, spectrally ambiguous ground the dissertation identifies as Attica's core confusion risk. (An earlier attempt at a different Spata-area site was abandoned after a diagnostic check showed it was dominated by solar-farm installations that Dynamic World labels "built" but the detector — tuned for vertical building structure — correctly does not; that site-selection issue, not a threshold problem, is why the AOI was moved.)
+
+**Hymettus control (Kaisariani Aesthetic Forest):** deliberately chosen as a legally protected, continuously forested site (Presidential Decree 71/94, Natura 2000) on Mount Hymettus, centred around 37.974°N, 23.798°E — an area with essentially zero real development and effectively no positive reference pixels to find (83 out of ~54,400 sampled). CORE correctly found almost nothing (0 true positives, 1 false positive out of 300 negative points) — exactly the conservative, high-specificity behaviour a control site is meant to demonstrate: the detector doesn't fire on rocky, forested terrain just because it's spectrally unusual. The broader Expanded candidate layer did register more signal here (recall 72.3%, precision 69.8%, F1 0.710), which reads as construction-stage/disturbance activity somewhere in the AOI that Dynamic World's "built" label hadn't caught up to, rather than a detector false-alarm — consistent with the CORE/Expanded design intent, though it's the one result here worth treating with some caution given the very small positive sample.
 
 ---
 
@@ -101,9 +103,9 @@ The two SAR channels (`dVH`, `dVV`) and `slope` all place in the top 5 — indep
 ## 4. Summary takeaways
 
 - **Precision is stable (~88%) across sensitivity profiles at the primary AOI; recall is what changes.** Directly attributable to AND-coupling behaviour, and consistent with the trade-off documented in [`gee-script/README.md`](../gee-script/README.md#threshold-reference).
-- **The detector is more precise at its primary case-study site than at a secondary corridor** — a genuine, reported limitation rather than a uniformly-strong result.
-- **The stability-control AOI behaved as intended** — CORE stayed essentially silent where the reference shows almost no real development.
+- **The detector is more precise at its primary case-study site than at the Spata growth corridor** — a genuine, reported limitation rather than a uniformly-strong result.
+- **The Hymettus control AOI behaved exactly as a specificity test should** — CORE stayed essentially silent (1 false positive out of 300 sampled negative points) on a protected forest where the reference shows almost no real development.
 - **GHSL is not usable as a primary validator at small-AOI scale** in this project — a property of the 100 m reference product, established empirically rather than assumed.
 - **The Random Forest diagnostic's only legitimate independent contribution is its feature-importance ranking**, which corroborates (with one genuine surprise around MNDWI) the multi-sensor design choice.
 
-Screenshots backing every run above are in [`screenshots/`](screenshots/): `run01_sensitive_ellinikon.jpg` through `run06_balanced_control_aoi.jpg`, plus `filters_0X.jpg` showing individual output layers on the map.
+Screenshots backing every run above are in [`screenshots/`](screenshots/): `run01_sensitive_ellinikon.jpg` through `run06_balanced_hymettus_control.jpg`, plus `filters_0X.jpg` showing individual output layers on the map.

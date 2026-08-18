@@ -149,6 +149,8 @@ The pattern is consistent and expected: **precision holds near ~88% across all t
 
 At GHSL's native 100 m resolution, the same AOI (~2×2 km) returned **zero positive reference pixels** — a scale-mismatch finding about the reference product at this AOI size, not a failure of the detector (documented in [`results/VALIDATION_RESULTS.md`](results/VALIDATION_RESULTS.md)).
 
+**Two further, purpose-selected AOIs stress-test the detector beyond its best case:** a genuine secondary growth site near **Spata** (industrial/warehouse development close to Athens International Airport — precision 61.5%, a real, reported drop from the primary site), and a **specificity test on Mount Hymettus**, inside a legally protected forest (Kaisariani Aesthetic Forest, Natura 2000) chosen specifically because essentially no real development exists there. The detector returned **0.001 km²** of CORE built-up — 1 false positive out of 300 sampled negative points — exactly the near-silent result a control site is supposed to produce.
+
 ---
 
 ## What breaks it (honestly)
@@ -260,7 +262,7 @@ Machine-readable version in [`CITATION.cff`](CITATION.cff).
 
 ## Project status
 
-Submitted 31 May 2026; defended before the departmental board on 27 May 2026. The script (`v7`, this repository) is the final submitted version. This repository is a portfolio re-packaging of that submission — the analytical content is unchanged from what was assessed; only the presentation and organisation have been adapted for public viewing.
+Submitted 31 May 2026; defended before the departmental board on 27 May 2026, with positive feedback specifically on the scientific rigor of the validation design and the structure of the write-up. The script (`v7`, this repository) is the final submitted version. This repository is a portfolio re-packaging of that submission — the analytical content is unchanged from what was assessed; only the presentation and organisation have been adapted for public viewing.
 
 ---
 

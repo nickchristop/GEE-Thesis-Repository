@@ -87,7 +87,7 @@ These layers are added to the map's Layers panel and are off by default — togg
 | Option | Description |
 |--------|-------------|
 | Dynamic World development reference | Google's Dynamic World (10 m, near-real-time) as the validation benchmark. Primary reference. |
-| GHSL built-up reference | JRC Global Human Settlement Layer (100 m, 5-year observation epochs). Secondary reference. GHSL epochs may not land on the exact years selected — the script snaps to the nearest observed epoch and reports it. |
+| GHSL built-up reference | JRC Global Human Settlement Layer (100 m, 5-year observation epochs, 1975–2020). Secondary reference. GHSL epochs may not land on the exact years selected — the script rounds each selected year down to the most recent *observed* epoch at or before it, and deliberately excludes the 2025/2030 GHSL layers since those are model projections, not observations. |
 | Both | Runs validation against both references sequentially. |
 
 ### Step 5 — Run
@@ -201,7 +201,7 @@ The following table documents the detection thresholds used by each sensitivity 
 
 **Patch filtering.** After all criterion masks are combined, a connected-pixel-count filter (`connectedPixelCount`) removes isolated single-pixel detections likely to be noise. Minimum patch size is profile-dependent (see threshold table above).
 
-**Burn exclusion.** Areas showing a large NBR decrease (ΔNBR > 0.20) combined with NDVI loss but without a strong built-up NDBI signal are flagged as burn-like disturbance and excluded from every urban-development category, preventing wildfire scars from being misread as construction.
+**Burn exclusion.** A pixel is flagged as burn-like disturbance — and excluded from every urban-development category — when it simultaneously shows a large NBR decrease (ΔNBR > 0.20), meaningful NDVI loss (> 0.12), a below-zero after-year NDBI, and a low after-year BSI. That combination (vegetation and burn-ratio loss without a corresponding built-up or bare-construction spectral signature) is designed to catch wildfire scars specifically, without also excluding genuine construction sites, which do show elevated NDBI/BSI.
 
 ---
 
