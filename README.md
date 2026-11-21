@@ -40,9 +40,9 @@ It was built and submitted as the practical component of a final-year dissertati
 4. [Sensitivity profiles](#sensitivity-profiles)
 5. [Validation design](#validation-design)
 6. [Headline results](#headline-results)
-7. [What breaks it (honestly)](#what-breaks-it-honestly)
+7. [What breaks it)](#what-breaks-it)
 8. [Repository structure & branches](#repository-structure--branches)
-9. [Running it yourself](#running-it-yourself)
+9. [HOW TO RUN](#HOW-TO-RUN)
 10. [Tech stack](#tech-stack)
 11. [Skills demonstrated](#skills-demonstrated)
 12. [Academic materials](#academic-materials)
@@ -153,7 +153,7 @@ At GHSL's native 100 m resolution, the same AOI (~2×2 km) returned **zero posit
 
 ---
 
-## What breaks it (honestly)
+## What breaks it
 
 A tool is only as credible as its documented failure modes. These are stated plainly in the dissertation and reproduced here rather than buried:
 
@@ -193,7 +193,7 @@ master/
 
 ---
 
-## Running it yourself
+## HOW TO RUN
 
 No installation required — everything runs in Google's cloud.
 
@@ -262,7 +262,7 @@ Machine-readable version in [`CITATION.cff`](CITATION.cff).
 
 ## Project status
 
-Submitted 31 May 2026; defended before the departmental board on 27 May 2026, with positive feedback specifically on the scientific rigor of the validation design and the structure of the write-up. The script (`v7`, this repository) is the final submitted version. This repository is a portfolio re-packaging of that submission — the analytical content is unchanged from what was assessed; only the presentation and organisation have been adapted for public viewing.
+Submitted 31 May 2026; defended before the College board on 27 May 2026, with positive feedback specifically on the scientific rigor of the validation design and the structure of the write-up. The script (`v7`, this repository) is the final submitted version. This repository is a portfolio re-packaging of that submission — the analytical content is unchanged from what was assessed; only the presentation and organisation have been adapted for public viewing.
 
 ---
 
