@@ -28,7 +28,7 @@ This repository holds a **multi-sensor, multi-criterion urban change detector** 
 
 It was built and submitted as the practical component of a final-year dissertation, defended in front of a departmental board in May 2026. The tool, the validation protocol, and the write-up are all included here — the working engineering artifact lives on **this branch**, and the full academic report and defense slides live on the [`academic`](../../tree/academic) branch (see [Academic materials](#academic-materials) below).
 
-**Quick links:** [Run it yourself](#running-it-yourself) · [Results](results/VALIDATION_RESULTS.md) · [Script docs](gee-script/README.md) · [Methodology evolution](docs/METHODOLOGY_EVOLUTION.md) · [Interactive AND-logic demo](docs/and-coupling-demo.html) · [Dissertation PDF](../../blob/academic/Dissertation_Report.pdf) · [Presentation PDF](../../blob/academic/Defense_Presentation.pdf)
+**Quick links:** [Run it yourself](#HOW-TO-RUN) · [Results](results/VALIDATION_RESULTS.md) · [Script docs](gee-script/README.md) · [Methodology evolution](docs/METHODOLOGY_EVOLUTION.md) · [Interactive AND-logic demo](docs/and-coupling-demo.html) · [Dissertation PDF](../../blob/academic/Dissertation_Report.pdf) · [Presentation PDF](../../blob/academic/Defense_Presentation.pdf)
 
 ---
 
