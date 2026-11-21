@@ -7,13 +7,13 @@ This branch holds the complete written dissertation and defense presentation. Th
 ---
 
 ## Contents
-
+> **Note:** GitHub can preview PDFs inline but not `.docx`/`.pptx` (those only offer "View raw", which downloads them). Use the PDF's for viewing unless you specifically need the editable source file.
 | File | Description |
 |---|---|
-| 📄 [`Dissertation_Report.pdf`](Dissertation_Report.pdf) | Full dissertation report, 70 pages, Greek. Recommended for viewing — renders directly in the browser. |
-| [`Dissertation_Report.docx`](Dissertation_Report.docx) | Original submitted Word source file. |
-| 🖥️ [`Defense_Presentation.pdf`](Defense_Presentation.pdf) | 20-slide deck presented to the departmental board on 27 May 2026. |
-| [`Defense_Presentation.pptx`](Defense_Presentation.pptx) | Original submitted PowerPoint source file. |
+| 📄 [`Dissertation_Report.pdf`](Dissertation_Report.pdf) | **START HERE.** Full dissertation report, 70 pages, Greek. Recommended for viewing — renders directly in the browser. |
+| [`Dissertation_Report.docx`](Dissertation_Report.docx) | Original submitted Word source file. GitHub will only offer it as a download (view raw) — use the PDF above to view it in-browser!|
+| 🖥️ [`Defense_Presentation.pdf`](Defense_Presentation.pdf) | **START HERE.** 20-slide deck presented to the College board on 27 May 2026. Renders directly in the browser. |
+| [`Defense_Presentation.pptx`](Defense_Presentation.pptx) | Original submitted PowerPoint source file. GitHub will only offer it as a download (view raw) — use the PDF above to view it in-browser!|
 | [`and-coupling-interactive-demo.html`](and-coupling-interactive-demo.html) | Self-contained interactive HTML demo of the 5-criterion AND-coupling logic used in the live presentation (also on `master`, [`docs/and-coupling-demo.html`](../../blob/master/docs/and-coupling-demo.html)) — download and open locally to run it. |
 
 ---
